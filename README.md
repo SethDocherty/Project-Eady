@@ -4,4 +4,4 @@ Eady the climate snake is an interactive reptile who illustrates the temperature
 
 ## Reference Links.
 
-1. [Installing repo env](docs\installation.md)
+1. [Installing repo env](docs/installation.md)
