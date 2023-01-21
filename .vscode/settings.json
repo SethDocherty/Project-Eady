@@ -1,0 +1,82 @@
+{
+  "files.autoSave": "off",
+  "editor.formatOnSave": true,
+  "editor.rulers": [119],
+
+  // PYTHON Settings --------------------------------------------------------------------
+  "black-formatter.importStrategy": "fromEnvironment",
+  "python.analysis.autoSearchPaths": true,
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.completeFunctionParens": true,
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.terminal.activateEnvironment": true,
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportUnboundVariable": "none",
+    "reportImplicitStringConcatenation": "warning"
+  },
+
+  // File path reference for the main 'Run Code' button for Python files. Not to be confused with 'Run Python File'
+  "code-runner.executorMap": {
+    "python": "$pythonPath $fullFileName"
+  },
+
+  // Linting Properties
+  "python.linting.enabled": true,
+  "python.linting.mypyEnabled": true,
+  "mypy.debugLogging": false,
+  "python.linting.mypyArgs": [
+    "--explicit-package-bases",
+    "--namespace-packages"
+  ],
+  "python.linting.mypyCategorySeverity.error": "Warning",
+  "mypy.runUsingActiveInterpreter": true,
+  "mypy.dmypyExecutable": "dmypy",
+
+  "mypy.targets": ["./geoparser"],
+  "python.linting.pylintEnabled": true,
+  "python.linting.pylintArgs": [
+    "--max-line-length=119",
+    "--generate-members=torch.*"
+  ],
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": ["--line-length=119"],
+
+  // Platform specified file paths
+  "platformSettings.autoLoad": true,
+  "platformSettings.platforms": {
+    "win32": {
+      "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe"
+
+      // Additional file paths should be referenced outside the source folder path
+      // "python.autoComplete.extraPaths": ["${workspaceFolder}"],
+      // "python.analysis.extraPaths": ["${workspaceFolder}"],
+    },
+    "linux": {
+      "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe"
+
+      // Additional file paths should be referenced outside the source folder path
+      // "python.autoComplete.extraPaths": ["${workspaceFolder}"],
+      // "python.analysis.extraPaths": ["${workspaceFolder}"],
+    },
+    "darwin": {
+      "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe"
+
+      // Additional file paths should be referenced outside the source folder path
+      // "python.autoComplete.extraPaths": ["${workspaceFolder}"],
+      // "python.analysis.extraPaths": ["${workspaceFolder}"],
+    }
+  },
+
+  // Package root source path to reference for the 'Run Python File'
+  "terminal.integrated.env.osx": {
+    "PYTHONPATH": "${env:PYTHONPATH}:${workspaceFolder}/eady"
+  },
+  "terminal.integrated.env.linux": {
+    "PYTHONPATH": "${env:PYTHONPATH}:${workspaceFolder}/eady"
+  },
+  "terminal.integrated.env.windows": {
+    "PYTHONPATH": "${env:PYTHONPATH}:${workspaceFolder}/eady"
+  }
+  // --------------------------------------------------------------------
+}
